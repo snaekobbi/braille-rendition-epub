@@ -9,6 +9,7 @@ rm $TMP_DIR
 cp -r $SAMPLES_DIR $TMP_DIR
 cd $TMP_DIR
 git init
+echo "**/*.mp3" > .gitignore
 git add . && git commit -m "publish samples"
 git push --force $GH_REMOTE master:$BRANCH
 cd $CURDIR

@@ -1,6 +1,7 @@
 EDUPUB_SAMPLES := src/edupub/samples/WCAG-ch1
 EDUPUB_SAMPLES_ZIPPED := $(patsubst %,%.epub,$(EDUPUB_SAMPLES))
-SAMPLES_ZIPPED := $(patsubst src/%.epub,samples/%.epub,$(EDUPUB_SAMPLES_ZIPPED))
+NLB_SAMPLES_ZIPPED := src/nlb/Jungelhaandboka.epub
+SAMPLES_ZIPPED := $(patsubst src/%.epub,samples/%.epub,$(EDUPUB_SAMPLES_ZIPPED) $(NLB_SAMPLES_ZIPPED))
 SAMPLES := $(patsubst %.epub,%,$(SAMPLES_ZIPPED))
 
 .PHONY : all publish
@@ -15,6 +16,10 @@ $(EDUPUB_SAMPLES) : src/edupub
 src/edupub :
 	git clone "https://github.com/IDPF/edupub.git" $@
 	cd $@ && git reset --hard "65e4f5f41f2e72214cc980c946ebfe935edc4102"
+
+src/nlb/Jungelhaandboka.epub :
+	mkdir -p $(dir $@)
+	wget -O - "https://dl.dropboxusercontent.com/u/6370535/612571.epub" > $@
 
 .SECONDARY : $(EDUPUB_SAMPLES_ZIPPED) $(SAMPLES_ZIPPED)
 
