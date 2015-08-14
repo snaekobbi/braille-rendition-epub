@@ -12,6 +12,12 @@ directory, after having checked out and built
 [daisy/pipeline-mod-braille#6](https://github.com/snaekobbi/pipeline-mod-braille/pull/6)
 and [daisy/pipeline-modules-common#73](https://github.com/daisy/pipeline-modules-common/pull/73).
 
+
+## Samples
+
+- [`WCAG-ch1.epub`](https://github.com/snaekobbi/braille-rendition-epub/raw/samples/edupub/samples/WCAG-ch1.epub):
+  first chapter of *World Cultures and Geography* by BEDNARZ S. e.a.
+
 -------------------------------------
 
 Copyright 2015 [Bert Frees][bert]
