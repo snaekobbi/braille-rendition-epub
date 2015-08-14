@@ -14,6 +14,7 @@ $(EDUPUB_SAMPLES) : src/edupub
 
 src/edupub :
 	git clone "https://github.com/IDPF/edupub.git" $@
+	cd $@ && git reset --hard "65e4f5f41f2e72214cc980c946ebfe935edc4102"
 
 .SECONDARY : $(EDUPUB_SAMPLES_ZIPPED) $(SAMPLES_ZIPPED)
 
