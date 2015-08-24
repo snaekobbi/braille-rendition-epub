@@ -3,7 +3,12 @@ EDUPUB_SAMPLES_ZIPPED := $(patsubst %,%.epub,$(EDUPUB_SAMPLES))
 SAMPLES_ZIPPED := $(patsubst src/%.epub,samples/%.epub,$(EDUPUB_SAMPLES_ZIPPED))
 SAMPLES := $(patsubst %.epub,%,$(SAMPLES_ZIPPED))
 
+.PHONY : all publish
+
 all : $(SAMPLES)
+
+publish :
+	./publish-samples.sh
 
 $(EDUPUB_SAMPLES) : src/edupub
 
